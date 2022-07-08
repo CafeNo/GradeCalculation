@@ -1,0 +1,321 @@
+from tkinter import *
+
+root = Tk()
+root.title('Grade Calculation')
+root.geometry('430x530')
+root.resizable(False, False)
+root['background'] = '#24292e'
+
+global totalTxt
+global summaryTxt
+global gpxSumAll
+
+summaryTxt = StringVar()
+totalTxt = StringVar()
+gpxSumAll = StringVar()
+summaryTxt.set(0)
+totalTxt.set(0)
+gpxSumAll.set(0)
+
+def runAll():
+    gpxCal()
+    gradeSummary()
+
+def gpxCal():
+    grade1 = grade1Cal()
+    grade2 = grade2Cal()
+    grade3 = grade3Cal()
+    grade4 = grade4Cal()
+    grade5 = grade5Cal()
+
+    gpxSum = (grade1 + grade2 + grade3 + grade4 + grade5)/5
+    gpxSum = round(gpxSum, 2) 
+    avgTxt.config(text=str(gpxSum)) 
+
+    print(gpxSum)
+
+
+def grade1Cal():
+    grade1 = int(grade1Entry.get())
+    if grade1 >= 80:
+        grade1 = 4
+    elif grade1 >= 70:
+        grade1 = 3
+    elif grade1 >= 60:
+        grade1 = 2
+    elif grade1 >= 50:
+        grade1 = 1
+    else:
+        grade1 = 0
+    
+    return grade1
+
+def grade2Cal():
+    grade2 = int(grade2Entry.get())
+    if grade2 >= 80:
+        grade2 = 4
+    elif grade2 >= 70:
+        grade2 = 3
+    elif grade2 >= 60:
+        grade2 = 2
+    elif grade2 >= 50:
+        grade2 = 1
+    else:
+        grade2 = 0
+    
+    return grade2
+
+def grade3Cal():
+    grade3 = int(grade3Entry.get())
+    if grade3 >= 80:
+        grade3 = 4
+    elif grade3 >= 70:
+        grade3 = 3
+    elif grade3 >= 60:
+        grade3 = 2
+    elif grade3 >= 50:
+        grade3 = 1
+    else:
+        grade3 = 0
+    
+    return grade3
+
+def grade4Cal():
+    grade4 = int(grade4Entry.get())
+    if grade4 >= 80:
+        grade4 = 4
+    elif grade4 >= 70:
+        grade4 = 3
+    elif grade4 >= 60:
+        grade4 = 2
+    elif grade4 >= 50:
+        grade4 = 1
+    else:
+        grade4 = 0
+    
+    return grade4
+
+def grade5Cal():
+    grade5 = int(grade5Entry.get())
+    if grade5 >= 80:
+        grade5 = 4
+    elif grade5 >= 70:
+        grade5 = 3
+    elif grade5 >= 60:
+        grade5 = 2
+    elif grade5 >= 50:
+        grade5 = 1
+    else:
+        grade5 = 0
+    
+    return grade5
+    
+
+def gradeSummary():
+
+    g1 = int(grade1Entry.get())
+    g2 = int(grade2Entry.get())
+    g3 = int(grade3Entry.get())
+    g4 = int(grade4Entry.get())
+    g5 = int(grade5Entry.get())
+
+    totalSum = g1 + g2 + g3 + g4 + g5
+    totalTxt.set(totalSum)
+    calSum = (g1 + g2 + g3 + g4 + g5) / 5
+    summaryTxt.set(calSum)
+
+    
+    try:
+        if g1 > 100:
+            g1 = 'Input below 100'
+            grade1Entry.delete(0, END) 
+            grade1Entry.insert(0, g1)
+        elif g1 >= 80:
+            grade1Entry.delete(0, END)
+            grade1Entry.insert(0, 'A')
+        elif g1 >= 70:
+            grade1Entry.delete(0, END)
+            grade1Entry.insert(0, 'B')
+        elif g1 >= 60:
+            grade1Entry.delete(0, END)
+            grade1Entry.insert(0, 'C')
+        elif g1 >= 50:
+            grade1Entry.delete(0, END)
+            grade1Entry.insert(0, 'D')
+        elif g1 >= 0:
+            grade1Entry.delete(0, END)
+            grade1Entry.insert(0, 'F')
+
+        if g2 > 100:
+            g2 = 'Input below 100'
+            grade2Entry.delete(0, END) 
+            grade2Entry.insert(0, g2)
+        elif g2 >= 80:
+            grade2Entry.delete(0, END)
+            grade2Entry.insert(0, 'A')
+        elif g2 >= 70:
+            grade2Entry.delete(0, END)
+            grade2Entry.insert(0, 'B')
+        elif g2 >= 60:
+            grade2Entry.delete(0, END)
+            grade2Entry.insert(0, 'C')
+        elif g2 >= 50:
+            grade2Entry.delete(0, END)
+            grade2Entry.insert(0, 'D')
+        elif g2 >= 0:
+            grade2Entry.delete(0, END)
+            grade2Entry.insert(0, 'F')
+
+        if g3 > 100:
+            g3 = 'Input below 100'
+            grade3Entry.delete(0, END) 
+            grade3Entry.insert(0, g3)
+        elif g3 >= 80:
+            grade3Entry.delete(0, END)
+            grade3Entry.insert(0, 'A')
+        elif g3 >= 70:
+            grade3Entry.delete(0, END)
+            grade3Entry.insert(0, 'B')
+        elif g3 >= 60:
+            grade3Entry.delete(0, END)
+            grade3Entry.insert(0, 'C')
+        elif g3 >= 50:
+            grade3Entry.delete(0, END)
+            grade3Entry.insert(0, 'D')
+        elif g3 >= 0:
+            grade3Entry.delete(0, END)
+            grade3Entry.insert(0, 'F')
+            
+        if g4 > 100:
+            g4 = 'Input below 100'
+            grade4Entry.delete(0, END) 
+            grade4Entry.insert(0, g4)
+        elif g4 >= 80:
+            grade4Entry.delete(0, END)
+            grade4Entry.insert(0, 'A')
+        elif g4 >= 70:
+            grade4Entry.delete(0, END)
+            grade4Entry.insert(0, 'B')
+        elif g4 >= 60:
+            grade4Entry.delete(0, END)
+            grade4Entry.insert(0, 'C')
+        elif g4 >= 50:
+            grade4Entry.delete(0, END)
+            grade4Entry.insert(0, 'D')
+        elif g4 >= 0:
+            grade4Entry.delete(0, END)
+            grade4Entry.insert(0, 'F')
+            
+        if g5 > 100:
+            g5 = 'Input below 100'
+            grade5Entry.delete(0, END) 
+            grade5Entry.insert(0, g5)
+        elif g5 >= 80:
+            grade5Entry.delete(0, END)
+            grade5Entry.insert(0, 'A')
+        elif g5 >= 70:
+            grade5Entry.delete(0, END)
+            grade5Entry.insert(0, 'B')
+        elif g5 >= 60:
+            grade5Entry.delete(0, END)
+            grade5Entry.insert(0, 'C')
+        elif g5 >= 50:
+            grade5Entry.delete(0, END)
+            grade5Entry.insert(0, 'D')
+        elif g5 >= 0:
+            grade5Entry.delete(0, END)
+            grade5Entry.insert(0, 'F')
+    except:
+        grade1Entry.delete(0, END)
+        grade1Entry.insert(0, 'ERROR')
+        grade2Entry.delete(0, END)
+        grade2Entry.insert(0, 'ERROR')
+        grade3Entry.delete(0, END)
+        grade3Entry.insert(0, 'ERROR')
+        grade4Entry.delete(0, END)
+        grade4Entry.insert(0, 'ERROR')
+        grade5Entry.delete(0, END)
+        grade5Entry.insert(0, 'ERROR')
+
+
+def savefile():
+    with open('history', 'w') as f:
+        f.write(grade1Entry.get() + '\n')
+        f.write(grade2Entry.get() + '\n')
+        f.write(grade3Entry.get() + '\n')
+        f.write(grade4Entry.get() + '\n')
+        f.write(grade5Entry.get() + '\n')
+        f.close
+        print('Saved')
+
+def loadFile():
+    with open('history', 'r') as f:
+        grade1Entry.delete(0, END)
+        grade2Entry.delete(0, END)
+        grade3Entry.delete(0, END)
+        grade4Entry.delete(0, END)
+        grade5Entry.delete(0, END)
+        grade1Entry.insert(0, f.readline())
+        grade2Entry.insert(0, f.readline())
+        grade3Entry.insert(0, f.readline())
+        grade4Entry.insert(0, f.readline())
+        grade5Entry.insert(0, f.readline())
+        f.close
+        print('Loaded')
+
+
+grade1Label = Label(root, text = 'Class 1: ', font = ('Aerial', 12, 'bold'), bg = '#24292e', fg = '#ffffff')
+grade1Label.grid(row = 0, column = 0, padx = 10, pady = 10)
+grade1Txt = StringVar()
+grade1Entry = Entry(root, textvariable = grade1Txt, width = 10)
+grade1Entry = Entry(root, font = ('Aerial', 12, 'bold'), bg = '#ffffff', fg = '#000000')
+grade1Entry.grid(row = 0, column = 1, padx = 20, pady = 3)
+
+grade2Label = Label(root, text = 'Class 2: ', font = ('Aerial', 12, 'bold'), bg = '#24292e', fg = '#ffffff')
+grade2Label.grid(row = 1, column = 0, padx = 10, pady = 10)
+grade2Txt = StringVar()
+grade2Entry = Entry(root, textvariable = grade2Txt, width = 10)
+grade2Entry = Entry(root, font = ('Aerial', 12, 'bold'), bg = '#ffffff', fg = '#000000')
+grade2Entry.grid(row = 1, column = 1, padx = 20, pady = 3)
+
+grade3Label = Label(root, text = 'Class 3: ', font = ('Aerial', 12, 'bold'), bg = '#24292e', fg = '#ffffff')
+grade3Label.grid(row = 2, column = 0, padx = 10, pady = 10)
+grade3Txt = StringVar()
+grade3Entry = Entry(root, textvariable = grade3Txt, width = 10)
+grade3Entry = Entry(root, font = ('Aerial', 12, 'bold'), bg = '#ffffff', fg = '#000000')
+grade3Entry.grid(row = 2, column = 1, padx = 20, pady = 3)
+
+grade4Label = Label(root, text = 'Class 4: ', font = ('Aerial', 12, 'bold'), bg = '#24292e', fg = '#ffffff')
+grade4Label.grid(row = 3, column = 0, padx = 10, pady = 10)
+grade4Txt = StringVar()
+grade4Entry = Entry(root, textvariable = grade4Txt, width = 10)
+grade4Entry = Entry(root, font = ('Aerial', 12, 'bold'), bg = '#ffffff', fg = '#000000')
+grade4Entry.grid(row = 3, column = 1, padx = 20, pady = 3)
+
+grade5Label = Label(root, text = 'Class 5: ', font = ('Aerial', 12, 'bold'), bg = '#24292e', fg = '#ffffff')
+grade5Label.grid(row = 4, column = 0, padx = 10, pady = 10)
+grade5Txt = StringVar()
+grade5Entry = Entry(root, textvariable = grade5Txt, width = 10)
+grade5Entry = Entry(root, font = ('Aerial', 12, 'bold'), bg = '#ffffff', fg = '#000000')
+grade5Entry.grid(row = 4, column = 1, padx = 20, pady = 3)
+
+avgLabel = Label(root, text = 'Average: ', font = ('Aerial', 12, 'bold'), bg = '#24292e', fg = '#ffffff')
+avgLabel.grid(row = 5, column = 0, padx = 10, pady = 10)
+avgSum =  Label(root, text = '' ,textvariable = summaryTxt, font = ('Aerial', 12, 'bold'), bg = '#24292e', fg = '#ffab70')
+avgSum.grid(row = 5, column = 1, padx = 20, pady = 3)
+
+avgLabel = Label(root, text = 'Grade: ', font = ('Aerial', 12, 'bold'), bg = '#24292e', fg = '#ffffff')
+avgLabel.grid(row = 6, column = 0, padx = 10, pady = 10)
+avgTxt = Label(root, text = '0.0',font=('Aerial', 12, 'bold'), bg = '#24292e', fg = '#f97578')
+avgTxt.grid(row = 6, column = 1, padx = 10, pady = 10)
+
+enterButton = Button(root, text = 'Calculate', font = ('Aerial', 12, 'bold'), bg = '#ffab70', fg = '#000000', padx = 30, pady = 6, command = lambda: runAll())
+enterButton.grid(row = 8, column = 0, columnspan = 2, padx = 10, pady = 10)
+
+saveButton = Button(root, text = 'Save', font = ('Aerial', 12, 'bold'), bg = '#f97578', fg = '#000000', padx = 30, pady = 6, command = savefile)
+saveButton.grid(row = 7, column = 0, padx = 10, pady = 10)
+
+loadButton = Button(root, text = 'Load', font = ('Aerial', 12, 'bold'), bg = '#f97578', fg = '#000000', padx = 30, pady = 6,command = loadFile)
+loadButton.grid(row = 7, column = 1, padx = 10, pady = 10)
+
+root.mainloop()
